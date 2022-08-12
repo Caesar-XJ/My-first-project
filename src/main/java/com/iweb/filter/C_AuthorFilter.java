@@ -7,7 +7,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.logging.LogRecord;
+
 
 /**
  * @author Caesar
@@ -31,13 +31,13 @@ public class C_AuthorFilter implements Filter {
 //        判断访问的请求是否是登录界面本身，或者是访问登录的提交路径
 //        比如登录页面是login.html，表单提交路径是/login
 //        这两个路径是过滤器不可以拦截的，否则永远无法访问任何东西
-        if(uri.endsWith("login.html")||uri.endsWith("login")){
+        if(uri.endsWith("login.jsp")||uri.endsWith("login")){
             filterChain.doFilter(req,resp);
             return;
         }
         User user= (User) req.getSession().getAttribute("user");
         if(user.getUsername()==null){
-            resp.sendRedirect("login.html");
+            resp.sendRedirect("login.jsp");
             return;
         }
         filterChain.doFilter(req,resp);
