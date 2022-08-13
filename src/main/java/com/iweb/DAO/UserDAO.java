@@ -1,6 +1,7 @@
 package com.iweb.DAO;
 
-import lombok.Data;
+import com.iweb.pojo.User;
+
 
 /**
  * @author Caesar
@@ -9,5 +10,10 @@ import lombok.Data;
  */
 
 public interface UserDAO {
-    boolean login(String username,String password);
+    /**
+     * 用户验证登录
+     * @param user 包含用户密码和登录信息
+     * @return 返回的布尔值代表验证的情况
+     */
+    boolean login(User user);
 }

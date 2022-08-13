@@ -11,6 +11,7 @@
 <html>
 <head>
     <title>Title</title>
+
 </head>
 <body>
 <%--页头的引入：页头这里我们没有写任何内容，中做了资源的引入--%>
@@ -21,7 +22,9 @@
             <div class="page-header">
                 <h1>
                     分类管理界面<small>除了CRUD还有其他功能，但是下课再说</small>
-                </h1>
+                </h1><br>
+                <h1>欢迎您尊贵的会员：${user.username}<a href="exit">退出破商场</a> </h1>
+
             </div> <button type="button" class="btn btn-default btn-primary">编辑</button>
             <button type="button" class="btn btn-default btn-danger">删除</button>
             <table class="table table-bordered table-hover">
