@@ -16,7 +16,7 @@ import java.sql.SQLException;
 public class UserDAOImpl implements UserDAO {
     @Override
     public boolean login(String username, String password) {
-        String sql = "select * from studenta where username = ? and password = ?";
+        String sql = "select * from user where username = ? and password = ?";
         try (Connection c = DBUtil.getConnection();
              PreparedStatement ps = c.prepareStatement(sql);
         ) {
